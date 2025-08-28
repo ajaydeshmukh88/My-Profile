@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Web Profile</title>
+  <meta name="description" content="Portfolio and web profile of Your Name: software engineer, builder, and tinkerer." />
+  <meta name="author" content="Your Name" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Name — Web Profile" />
+  <meta property="og:description" content="Portfolio and web profile of Your Name: software engineer, builder, and tinkerer." />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- JSON-LD Schema.org (edit values) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "https://your-username.github.io",
+    "sameAs": [
+      "https://github.com/your-username",
+      "https://www.linkedin.com/in/your-handle"
+    ],
+    "jobTitle": "Team Lead || Sr. software engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Touras tech global"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --bg-elev: #121826;
+      --text: #eef2ff;
+      --muted: #b5c0d0;
+      --acc: #7c3aed;
+      --ring: #a78bfa;
+      --card: #0d1220;
+      --ok: #10b981;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --bg-elev: #f7f7fb;
+        --text: #0b1220;
+        --muted: #4b5563;
+        --acc: #6d28d9;
+        --ring: #8b5cf6;
+        --card: #ffffff;
+        --ok: #059669;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1200px 800px at 100% -10%, rgba(124,58,237,.15), transparent 60%), radial-gradient(1200px 800px at -10% 110%, rgba(16,185,129,.10), transparent 60%), var(--bg);
+      line-height: 1.6; letter-spacing: .01em;
+    }
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: color-mix(in hsl, var(--bg), transparent 40%); border-bottom: 1px solid color-mix(in srgb, var(--muted) 15%, transparent); z-index: 50; }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    a { color: inherit; text-decoration: none; }
+    .brand { font-weight: 700; letter-spacing: .02em; }
+    .navlinks a { opacity: .9; padding: 10px 12px; border-radius: 12px; }
+    .navlinks a:hover { background: color-mix(in srgb, var(--acc) 16%, transparent); }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; padding: 56px 0; align-items: center; }
+    .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin: 0 0 12px; }
+    .subtitle { font-size: clamp(16px, 1.7vw, 20px); color: var(--muted); margin-bottom: 18px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid color-mix(in srgb, var(--muted) 20%, transparent); background: linear-gradient(180deg, color-mix(in srgb, var(--card) 70%, transparent), color-mix(in srgb, var(--card) 85%, transparent)); box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 8px 24px rgba(0,0,0,.15); }
+    .btn:hover { border-color: color-mix(in srgb, var(--ring) 40%, transparent); box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 12px 32px rgba(0,0,0,.18); }
+    .btn.primary { background: linear-gradient(180deg, color-mix(in srgb, var(--acc) 30%, transparent), color-mix(in srgb, var(--acc) 15%, transparent)); border-color: color-mix(in srgb, var(--acc) 60%, transparent); }
+
+    .card { background: var(--bg-elev); border: 1px solid color-mix(in srgb, var(--muted) 16%, transparent); border-radius: 18px; padding: 22px; box-shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 8px 30px rgba(0,0,0,.12); }
+    section { padding: 24px 0 8px; }
+    section h2 { margin: 0 0 10px; font-size: 24px; }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+    .tags { display:flex; gap:8px; flex-wrap:wrap; }
+    .tag { padding:6px 10px; border-radius:999px; border:1px dashed color-mix(in srgb, var(--muted) 25%, transparent); font-size: 13px; opacity:.95; }
+
+    .project { display:flex; flex-direction:column; gap:8px; }
+    .project h3 { margin: 0; font-size: 18px; }
+    .project .meta { font-size: 13px; color: var(--muted); }
+
+    footer { margin: 56px 0 24px; color: var(--muted); font-size: 14px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap: wrap; }
+    .social { display:flex; align-items:center; gap:10px; }
+    .social a { padding:8px; border-radius:12px; border:1px solid color-mix(in srgb, var(--muted) 20%, transparent); }
+    .social a:hover { border-color: color-mix(in srgb, var(--ring) 40%, transparent); }
+
+    .avatar { width: 120px; height: 120px; border-radius: 20px; overflow:hidden; border: 2px solid color-mix(in srgb, var(--ring) 40%, transparent); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display:block; }
+
+    .muted { color: var(--muted); }
+    .ok { color: var(--ok); font-weight: 600; }
+
+    .skip { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip:focus { position:static; width:auto; height:auto; background: var(--ring); color:#fff; padding:4px 8px; border-radius:8px; }
+
+    @media (max-width: 840px) {
+      .hero { grid-template-columns: 1fr; }
+      .actions { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <div class="brand">Ajay Deshmukh</div>
+        <div class="navlinks" role="navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <div>
+        <h1>Hi, I'm <span class="ok">Ajay Deshmukh</span> —
+          <br>From Building Systems to Leading Teams</h1>
+        <p class="subtitle">I create secure, high-performance backend solutions leveraging Java and Spring, while expanding my knowledge in system design and distributed systems engineering.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects" aria-label="View my projects">
+            <!-- arrow icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            View Projects
+          </a>
+          <a class="btn" href="mailto:ajaydeshmukh88@gmail.com" aria-label="Email me">
+            <!-- mail icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            Email
+          </a>
+          <a class="btn" href="resume.pdf" aria-label="Download resume">📄 Resume</a>
+        </div>
+      </div>
+      <div style="justify-self:end;">
+        <figure class="avatar" aria-label="Profile photo">
+          <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Your avatar" />
+        </figure>
+        <p class="muted" style="margin-top:10px">Open to roles · Remote/Hybrid</p>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        Dynamic Software Engineer and Team Lead with 8+ years of experience architecting high-availability, scalable solutions in fintech and payments. Skilled in end-to-end SDLC processes including feature development, API creation, performance tuning, and code optimization. Adept at leading Agile teams, fostering collaboration, and delivering secure, high-quality software products on time. Passionate about continuous learning and applying best practices in software design and architecture.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <div class="tags">
+          <span class="tag">Java 21</span>
+          <span class="tag">Spring Boot 3</span>
+          <span class="tag">REST / gRPC</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Docker · K8s (EKS)</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Redis</span>
+          <span class="tag">CI/CD · GitHub Actions</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python (ML basics)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid cols-3">
+        <article class="card project">
+          <h3>Notification Middleware</h3>
+          <div class="meta">Email · SMS · Push · Templates · OTPs</div>
+          <p>Centralized, event-driven service supporting multiple providers with retries, deduplication, and audit logs.</p>
+          <div class="tags"><span class="tag">Java</span><span class="tag">Spring</span><span class="tag">Kafka</span></div>
+          <div class="actions"><a class="btn" href="#">Code</a><a class="btn" href="#">Live</a></div>
+        </article>
+        <article class="card project">
+          <h3>Recon on EKS</h3>
+          <div class="meta">Zero-downtime deployment · Infra-as-code</div>
+          <p>Migrated a reconciliation engine to Kubernetes (EKS) with autoscaling and rolling updates.</p>
+          <div class="tags"><span class="tag">K8s</span><span class="tag">AWS</span></div>
+          <div class="actions"><a class="btn" href="#">Case Study</a></div>
+        </article>
+        <article class="card project">
+          <h3>PDF Insights (AI)</h3>
+          <div class="meta">Extraction · Summarization</div>
+          <p>Built a pipeline to parse PDFs and summarize key metrics; reduced manual analysis time by 70%.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">NLP</span></div>
+          <div class="actions"><a class="btn" href="#">Write-up</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Senior Software Engineer — Your Company</strong>
+          <div class="muted">2021 — Present</div>
+          <ul>
+            <li>Designed and shipped scalable REST/gRPC services handling millions of notifications/day.</li>
+            <li>Led migration to Spring Boot 3 & Java 21; improved performance and security posture.</li>
+            <li>Drove observability (metrics, tracing, logging) and SLOs.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Software Engineer — Previous Co.</strong>
+          <div class="muted">2017 — 2021</div>
+          <ul>
+            <li>Built payment workflows with idempotency, retries, and saga orchestration.</li>
+            <li>Optimized SQL queries and caching; cut latency by 35%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Best way to reach me is email: <a href="mailto:ajaydeshmukh.tech@gmail.com">ajaydeshmukh.tech@gmail.com</a>. I’m also active on GitHub and LinkedIn.</p>
+      <div class="social" aria-label="Social links">
+        <a href="https://github.com/your-username" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.76.08-.75.08-.75 1.21.08 1.85 1.25 1.85 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.63-2.67-.31-5.48-1.34-5.48-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.69.24 2.95.12 3.25.77.84 1.24 1.92 1.24 3.24 0 4.63-2.81 5.64-5.49 5.95.43.37.81 1.1.81 2.23v3.3c0 .32.21.69.82.58A12 12 0 0 0 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/your-handle" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1C12.2 8.6 13.9 7.8 16 7.8c4.2 0 5 2.8 5 6.5V24h-4v-7.4c0-1.8 0-4.2-2.6-4.2-2.6 0-3 2-3 4V24h-4V8z"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div>© <span id="y"></span> Ajay Deshmukh</div>
+    <div class="muted">Built with vanilla HTML/CSS · Hosted on GitHub Pages</div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>
